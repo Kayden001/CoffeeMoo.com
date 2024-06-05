@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeMoo - Our Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #2d2926;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+        .menu-section {
+            padding: 60px 20px;
+            background-image: url('BG2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            text-align: center;
+        }
+        .menu-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .menu-item {
+            background-color: #4b3832;
+            color: #fff;
+            border-radius: 10px;
+            width: 30%;
+            margin: 20px 0;
+            padding: 20px;
+            text-align: left;
+        }
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .menu-item h3 {
+            margin-top: 0;
+        }
+        .menu-item p {
+            font-size: 1em;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .quantity-controls button {
+            background-color: #A9A9A9;
+            border: none;
+            color: black;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        .quantity-controls input {
+            width: 50px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #2d2926;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        #cart-quantity {
+            color: yellow;
+            font-weight: bold;
+        }
+.submit-order {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.submit-order button {
+    background-color: #c9a66b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.submit-order button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="MENU.html">Our Menu</a>
+        <a href="ContactUs.html">Contact</a>
+        <div>
+            <a href="SignUp.html">Sign Up</a>
+            <a href="LogIn.html">Log In</a>
+            <a href="MENU.html">🛒<span id="cart-quantity">0</span></a>
+        </div>
+    </nav>
+    <div class="menu-section" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="Espre.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>A strong and rich coffee shot, perfect for a quick caffeine boost.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('espresso', -1)">-</button>
+                    <input type="number" id="espresso-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('espresso', 1)">+</button>
+                    <button onclick="addToCart('espresso')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Cap.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>A classic Italian coffee with steamed milk foam, offering a creamy and delightful taste.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('cappuccino', -1)">-</button>
+                    <input type="number" id="cappuccino-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('cappuccino', 1)">+</button>
+                    <button onclick="addToCart('cappuccino')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>A smooth blend of espresso and steamed milk, topped with a light layer of foam.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('latte', -1)">-</button>
+                    <input type="number" id="latte-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('latte', 1)">+</button>
+                    <button onclick="addToCart('latte')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Mocha.jpg" alt="Mocha">
+                <h3>Mocha</h3>
+                <p>A delicious combination of espresso, chocolate, and steamed milk, topped with whipped cream.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('mocha', -1)">-</button>
+                    <input type="number" id="mocha-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('mocha', 1)">+</button>
+                    <button onclick="addToCart('mocha')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Icedlat.jpg" alt="Iced Latte">
+                <h3>Iced Latte</h3>
+                <p>A refreshing cold coffee with espresso and chilled milk, served over ice.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('iced-latte', -1)">-</button>
+                    <input type="number" id="iced-latte-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('iced-latte', 1)">+</button>
+                    <button onclick="addToCart('iced-latte')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Afo.jpg" alt="Affogato">
+                <h3>Affogato</h3>
+                <p>A delightful dessert coffee with a shot of hot espresso poured over vanilla ice cream.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('affogato', -1)">-</button>
+                    <input type="number" id="affogato-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('affogato', 1)">+</button>
+                    <button onclick="addToCart('affogato')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Coldbrew.jpg" alt="Cold Brew">
+                <h3>Cold Brew</h3>
+                <p>A smooth and refreshing cold coffee brewed over an extended period of time.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('cold-brew', -1)">-</button>
+                    <input type="number" id="cold-brew-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('cold-brew', 1)">+</button>
+                    <button onclick="addToCart('cold-brew')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Hotchoc.jpg" alt="Hot Chocolate">
+                <h3>Hot Chocolate</h3>
+                <p>A comforting drink made with melted chocolate, topped with whipped cream.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('hot-chocolate', -1)">-</button>
+                    <input type="number" id="hot-chocolate-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('hot-chocolate', 1)">+</button>
+                    <button onclick="addToCart('hot-chocolate')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Matcha.jpg" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p>A smooth and creamy blend of Japanese matcha powder and steamed milk.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('matcha-latte', -1)">-</button>
+                    <input type="number" id="matcha-latte-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('matcha-latte', 1)">+</button>
+                    <button onclick="addToCart('matcha-latte')">Add</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Vanil.jpg" alt="Vanilla Milkshake">
+                <h3>Vanilla Milkshake</h3>
+                <p>A classic creamy milkshake flavored with vanilla extract.</p>
+                <div class="quantity-controls">
+                    <button onclick="updateQuantity('vanilla-milkshake', -1)">-</button>
+                    <input type="number" id="vanilla-milkshake-quantity" value="0" min="0" readonly>
+                    <button onclick="updateQuantity('vanilla-milkshake', 1)">+</button>
+                    <button onclick="addToCart('vanilla-milkshake')">Add</button>
+                </div>
+
+<div id="cart" class="submit-order">
+    <button onclick="submitOrder()">Submit Order</button>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 CoffeeMoo Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = {};
+
+        function updateQuantity(item, change) {
+            const quantityInput = document.getElementById(item + '-quantity');
+            let quantity = parseInt(quantityInput.value) + change;
+            if (quantity < 0) quantity = 0;
+            quantityInput.value = quantity;
+        }
+
+        function addToCart(item) {
+            const quantityInput = document.getElementById(item + '-quantity');
+            const quantity = parseInt(quantityInput.value);
+            if (quantity > 0) {
+                cart[item] = (cart[item] || 0) + quantity;
+                updateCartDisplay();
+                quantityInput.value = 0;
+            }
+        }
+
+        function updateCartDisplay() {
+            const cartQuantityDisplay = document.getElementById('cart-quantity');
+            let totalQuantity = 0;
+            for (let item in cart) {
+                totalQuantity += cart[item];
+            }
+            cartQuantityDisplay.textContent = totalQuantity;
+        }
+function submitOrder() {
+    // Assuming the "thank you" page is named "thankyou.html"
+    window.location.href = "TY.html";
+}
+
+    </script>
+</body>
+</html>

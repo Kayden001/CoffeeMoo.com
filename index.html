@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeMoo - Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #fff;
+        }
+        header {
+            background-color: #4b3832;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #2d2926;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+        .container {
+            background-image: url('BG1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .content p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .content a {
+            background-color: #c9a66b;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .card {
+            background-color: #4b3832;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 30%;
+            margin: 20px 0;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content {
+            padding: 20px;
+            text-align: left;
+        }
+        .card-content h3 {
+            margin-top: 0;
+        }
+        .card-content p {
+            font-size: 0.9em;
+        }
+        .card-content a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #c9a66b;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #2d2926;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="MENU.html">Our Menu</a>
+        <a href="ContactUs.html">Contact</a>
+        <div>
+            <a href="SignUp.html">Sign Up</a>
+            <a href="LogIn.html">Log In</a>
+            <a href="MENU.html">🛒</a>
+        </div>
+    </nav>
+    <div class="container" id="home">
+        <div class="content">
+            <h1>Start your day with a coffee</h1>
+	    <p> </p>
+            <p> Kickstart your morning with our premium coffee blends.</p>
+	    <p> Whether you crave a classic hot coffee, a refreshing iced brew, or a 			decadent coffee milkshake.</p>
+            <p> We have the perfect drink to fuel your day.</p>
+	    <p> </p>
+            <a href="SignUp.html">Order Now</a>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <img src="HC.png" alt="Hot Coffee"> <!-- Replace with actual image source -->
+            <div class="card-content">
+                <h3>Hot Coffee</h3>
+                <p>"Our hot coffee is brewed to perfection, offering a rich and smooth flavor to start your day right. Made from the finest beans, it's a classic favorite."</p>
+                <a href="MENU.html">Find Out More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="CC.png" alt="Iced Coffee"> <!-- Replace with actual image source -->
+            <div class="card-content">
+                <h3>Iced Coffee</h3>
+                <p>"Cool down with our refreshing iced coffee. Perfectly brewed and chilled, it's the ideal pick-me-up for any time of the day."</p>
+                <a href="MENU.html">Find Out More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="CMS.png" alt="Coffee Milk Shake"> <!-- Replace with actual image source -->
+            <div class="card-content">
+                <h3>Coffee Milk Shake</h3>
+                <p>"Indulge in our creamy coffee milkshake, a delightful blend of rich coffee and creamy goodness. It's a treat that's hard to resist."</p>
+                <a href="MENU.html">Find Out More</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 CoffeeMoo Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
